@@ -1,9 +1,10 @@
 class BlåRes extends Resept {
-    public BlåRes(Legemiddel legemiddel, Lege utskrivendeLege, int pasientId, int reit) {
-        super(legemiddel, utskrivendeLege, pasientId, reit);
+    public BlåRes(Legemiddel legemiddel, Lege utskrivendeLege, Pasient pasient, int reit) {
+        super(legemiddel, utskrivendeLege, pasient, reit);
     }
 
     public String farge() {
+
         return "blå";
     }
 
