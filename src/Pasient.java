@@ -1,6 +1,42 @@
 public class Pasient {
     private String navn;
-    private
+    private String fodselsnr;
+    private int id;
+    private static int teller=0;
+    private Stabel<Resept> reseptliste= new Stabel<Resept>();
+
+    public Pasient (String navn, String fodselsnr){
+        this.navn=navn;
+        this.fodselsnr=fodselsnr;
+        reseptliste = new Stabel<Resept>();
+        id=teller++;
+
+    }
+    public int hentId() {
+        return id;
+    }
+
+    public String hentNavn() {
+        return navn;
+    }
+
+    public String hentFodselsnummer() {
+        return fodselsnr;
+    }
+
+    public void leggTilResept(Resept resept) {
+        reseptliste.leggPaa(resept);
+    }
+
+    public Stabel<Resept> hentReseptListe() {
+        return reseptliste;
+    }
+
+    @Override
+    public String toString() {
+        return navn + " (fnr " + fodselsnr + ")" ;
+    }
+
 }
 
 
@@ -16,29 +52,7 @@ public class Pasient {
         B2: Endre klassene som tar inn en int pasientid til å ta inn en Pasient pasient.
 
 
-public class Pasient {
-    private String navn;
-    private long fodselsnummer;
-    private int id;
-    private static int teller=0;
-    private Stabel<Resept> stabel = new Stabel<Resept>();
-
-    public Pasient(String navn, long fodselsnummer) {
-        this.navn=navn;
-        this.fodselsnummer=fodselsnummer;
-        stabel = new Stabel<Resept>();
-        id=teller++;
-
-          String navn;
-  String fodselsnr;
-  int id;
-  int antNark;
-  Lenkeliste<Resept> reseptliste = new Stabel<Resept>();
-
-  public Pasient(String navn, String fodselsnr){
-    this.navn = navn;
-    this.fodselsnr = fodselsnr;
-
+p
 
 
         */

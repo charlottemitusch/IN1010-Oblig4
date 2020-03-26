@@ -1,6 +1,6 @@
 public class PResept extends HvitRes {
-    public PResept(Legemiddel legemiddel, Lege utskrivendeLege, int pasientId) {
-        super(legemiddel, utskrivendeLege, pasientId, 3);
+    public PResept(Legemiddel legemiddel, Lege utskrivendeLege, Pasient pasient) {
+        super(legemiddel, utskrivendeLege, pasient, 3);
     }
 
 
