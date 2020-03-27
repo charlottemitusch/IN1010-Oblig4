@@ -31,12 +31,13 @@ public class Legesystem {
             System.out.println("Finner ikke filen");
             return;
         }
+
         scanner.nextLine();
 
         while (scanner.hasNextLine()) {
             String[] PasientBiter = scanner.nextLine().split(",");
 
-            while (Character.toString(PasientBiter[0].charAt(0)) != "#") {
+            while (!Character.toString(PasientBiter[0].charAt(0)).equals("#")) {
                 String navn = PasientBiter[0];
                 String fnr = PasientBiter[1];
                 Pasient pasient = new Pasient(navn, fnr);
@@ -45,7 +46,7 @@ public class Legesystem {
             }
 
             String[] LegemiddelBiter = scanner.nextLine().split(",");
-            while (Character.toString(LegemiddelBiter[0].charAt(0)) != "#") {
+            while (!Character.toString(LegemiddelBiter[0].charAt(0)).equals("#")) {
                 String navn = LegemiddelBiter[0];
                 String type = LegemiddelBiter[1];
                 double pris = Double.parseDouble(LegemiddelBiter[2]);
@@ -62,7 +63,6 @@ public class Legesystem {
                     legemiddelListe.leggTil(vanedannende);
                     LegemiddelBiter = scanner.nextLine().split(",");
                 } else if (type.equals("vanlig")) {
-                    int styrke = Integer.parseInt(LegemiddelBiter[4]);
                     Vanlig vanlig = new Vanlig(navn, pris, virkestoff);
                     legemiddelListe.leggTil(vanlig);
                     LegemiddelBiter = scanner.nextLine().split(",");
@@ -70,7 +70,7 @@ public class Legesystem {
 
             }
             String[] LegeBiter = scanner.nextLine().split(",");
-            while (Character.toString(LegeBiter[0].charAt(0)) != "#") {
+            while (!Character.toString(LegeBiter[0].charAt(0)).equals("#")) {
                 String navn = LegeBiter[0];
                 int kontrollid = Integer.parseInt(LegeBiter[1]);
 
@@ -101,7 +101,7 @@ public class Legesystem {
 
                 Lege lege = null;
                 for (Lege l : legeListe) {
-                    if (l.hentNavn() == legeNavn) {
+                    if (l.hentNavn().equals(legeNavn)) {
                         lege = l;
                     }
                 }
@@ -140,7 +140,6 @@ public class Legesystem {
 
                 } else if (type.equals("p")) {
                     try {
-                        int reit = Integer.parseInt(ReseptBiter[4]);
                         PResept pResept = lege.skrivPResept(legemiddel, pasient);
                         reseptListe.leggTil(pResept);
                     } catch (UlovligUtskrift e) {
