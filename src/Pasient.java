@@ -1,9 +1,9 @@
 public class Pasient {
-    private String navn;
-    private String fodselsnr;
-    private int id;
-    private static int teller=0;
-    private Stabel<Resept> reseptliste= new Stabel<Resept>();
+    public String navn;
+    public String fodselsnr;
+    public int id;
+    public static int teller=0;
+    public Stabel<Resept> reseptliste= new Stabel<Resept>();
 
     public Pasient (String navn, String fodselsnr){
         this.navn=navn;

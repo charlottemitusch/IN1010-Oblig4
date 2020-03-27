@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileNotFoundException;
 
 class Test {
@@ -6,9 +7,9 @@ class Test {
 
         Legesystem legesystemet = new Legesystem();
         try{
-            legesystemet.lesFil("myeInndata.txt");
+            legesystemet.lesFil(new File("./Inndata1.txt"));
         }
-        catch (FileNotFoundException e){
+        catch (FileNotFoundException | UlovligUtskrift e){
             System.out.println(e.getMessage());
         }
 

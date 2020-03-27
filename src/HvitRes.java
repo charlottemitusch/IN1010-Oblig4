@@ -8,5 +8,10 @@
         return "hvit";
     }
 
+        @Override
+        public double prisAaBetale() {
+            return 0;
+        }
 
-}
+
+    }

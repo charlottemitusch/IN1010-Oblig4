@@ -36,7 +36,7 @@ public class Legesystem {
         while (scanner.hasNextLine()) {
             String[] PasientBiter = scanner.nextLine().split(",");
 
-            while (PasientBiter[0].charAt(0) != "#") {
+            while (Character.toString(PasientBiter[0].charAt(0)) != "#") {
                 String navn = PasientBiter[0];
                 String fnr = PasientBiter[1];
                 Pasient pasient = new Pasient(navn, fnr);
@@ -45,7 +45,7 @@ public class Legesystem {
             }
 
             String[] LegemiddelBiter = scanner.nextLine().split(",");
-            while (LegemiddelBiter[0].charAt(0) != "#") {
+            while (Character.toString(LegemiddelBiter[0].charAt(0)) != "#") {
                 String navn = LegemiddelBiter[0];
                 String type = LegemiddelBiter[1];
                 double pris = Double.parseDouble(LegemiddelBiter[2]);
@@ -70,7 +70,7 @@ public class Legesystem {
 
             }
             String[] LegeBiter = scanner.nextLine().split(",");
-            while (LegeBiter[0].charAt(0) != "#") {
+            while (Character.toString(LegeBiter[0].charAt(0)) != "#") {
                 String navn = LegeBiter[0];
                 int kontrollid = Integer.parseInt(LegeBiter[1]);
 
@@ -555,7 +555,7 @@ public class Legesystem {
             int antalltResepter = 0;
 
             for (Resept resept : pasient.hentReseptListe()) {
-                System.out.println(antalltResepter + ": " + resept.hentLegemiddel().hentNavn() + " (" + resept.hentReit() + " reit)");
+                System.out.println(antalltResepter + ": " + resept.hentLegemiddel() + " (" + resept.hentReit() + " reit)");
                 antalltResepter++;
             }
 
@@ -572,10 +572,10 @@ public class Legesystem {
             try {
                 pasient.hentReseptListe().hent(valgtResept).bruk();
 
-                System.out.println("Brukte resept paa " + oensketResept.hentLegemiddel().hentNavn() + ". Antall gjenværende reit: " + oensketResept.hentReit());
+                System.out.println("Brukte resept paa " + oensketResept.hentLegemiddel() + ". Antall gjenværende reit: " + oensketResept.hentReit());
 
             } catch (Exception e) {
-                System.out.println("Kunne ikke bruke resept paa " + oensketResept.hentLegemiddel().hentNavn() + " (ingen gjenvaerende reit).");
+                System.out.println("Kunne ikke bruke resept paa " + oensketResept.hentLegemiddel() + " (ingen gjenvaerende reit).");
             }
         } else {
             System.out.println("Ugyldig valg. Gaar tilbake til hovedmeny");
