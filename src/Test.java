@@ -7,7 +7,6 @@ class Test {
 
         Legesystem legesystemet = new Legesystem();
         try{
-
             legesystemet.lesFil(new File("src/Inndata1.txt"));
         }
         catch (FileNotFoundException | UlovligUtskrift e){

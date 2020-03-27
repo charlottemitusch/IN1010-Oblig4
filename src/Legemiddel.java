@@ -29,9 +29,13 @@ public abstract class Legemiddel {
     }
 
     public double settNyPris(double nyPris) {
-        pris = nyPris;
+        pris = nyPris;1
         return nyPris;
 
+    }
+
+    public String toString() { //toString() metode slik at jeg lett kan skrive ut all informasjonen om objektene.
+        return navn + " " + id + ": koster opprinnelig " + pris + " kroner. Har virkestoff " + virkestoff + " mg";
     }
 
     public void hentInfo() {

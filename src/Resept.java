@@ -51,6 +51,11 @@ public abstract class Resept {
 
     abstract public double prisAaBetale();
 
+    public String toString() { //Metode toString() som returnerer et tilpasset utskrift til et objekt av klassen.
+        return legemiddel + "\nSkrevet ut av " + utskrivendeLege + " til pasient: " + id + "\nReit igjen: " + reit;
+    }
+
+
     public void skrivUtInfo() {
         System.out.println("ID: " + this.hentId());
         System.out.println("Legemiddel: " + this.hentLegemiddel());
