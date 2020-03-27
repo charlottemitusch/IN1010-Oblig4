@@ -29,7 +29,7 @@ public abstract class Legemiddel {
     }
 
     public double settNyPris(double nyPris) {
-        pris = nyPris;1
+        pris = nyPris;
         return nyPris;
 
     }

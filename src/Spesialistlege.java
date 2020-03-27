@@ -11,6 +11,10 @@ class Spesialistlege extends Lege implements Godkjenningsfritak {
     public int hentKontrollID() {
         return kontrollID;
     }
+
+    public String toString() {
+        return super.toString() + " med godkjenningsfritaket " + kontrollID;
+    }
 }
 
 
