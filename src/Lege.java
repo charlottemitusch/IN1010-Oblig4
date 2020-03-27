@@ -1,6 +1,7 @@
 public class Lege implements Comparable<Lege>{
     protected String navn;
     Lenkeliste<Resept> utskrevedeResepter = new Lenkeliste<Resept>();
+    protected int ikkeSpesialist;
 
 
     public Lege(String navn) {
@@ -10,6 +11,14 @@ public class Lege implements Comparable<Lege>{
     public String hentNavn() {
 
         return navn;
+    }
+
+    public int hentKontrollId(){
+        return ikkeSpesialist;
+    }
+
+    public String toString() {
+        return "Navn: " + navn + "\nTittel: Lege";
     }
 
     public int compareTo(Lege lege) {
@@ -28,7 +37,7 @@ public class Lege implements Comparable<Lege>{
 
     public HvitRes skrivHvitResept(Legemiddel legemiddel, Pasient pasient, int reit) throws
             UlovligUtskrift{
-        if (sjekkLege(legemiddel)) throw new UlovligUtskrift(this, legemiddel));
+        if (sjekkLege(legemiddel)) throw new UlovligUtskrift(this, legemiddel);
         HvitRes resept = new HvitRes(legemiddel, this, pasient, reit);
         utskrevedeResepter.leggTil(resept);
         return resept;

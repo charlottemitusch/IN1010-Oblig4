@@ -19,6 +19,10 @@ public abstract class Resept {
         return id;
     }
 
+    public Legemiddel hentHeleLegemiddel(){
+        return this.legemiddel;
+    }
+
     public String hentLegemiddel() {
         return legemiddel.hentNavn();
     }
