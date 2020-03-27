@@ -1,3 +1,4 @@
+public class Legesystem {
 
 import java.io.File;
 import java.io.FileNotFoundException;
